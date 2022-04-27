@@ -1,0 +1,212 @@
+/*---------------------------------------------*/
+/*Generales*/
+/*---------------------------------------------*/
+
+:root{
+    --negro: #191919;
+    --azul:#559BD7;
+    --blanco: #F6FAFE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik';
+    overflow-x: hidden;
+}
+
+/*-----------------------------------------------*/
+/*Banner Principal*/
+/*-----------------------------------------------*/
+
+.banner{
+    display: flex;
+    background-image: url('../img/bk-banner.gif');
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -3.5%;
+    width: 100vw;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blanco);
+    outline: none;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+    max-width: 800px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logotipo {
+    padding: 10px;
+    position: relative;
+}
+
+span{
+    display: inline-block;
+}
+
+.big{
+    font-size: 220px;
+    font-weight: 600;
+    color: var(--negro);
+}
+
+.texto-animado{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+.texto-animado > div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all .3s all;
+}
+
+.texto-animado > div.animacion {
+    transform: translateY(-100px);
+}
+
+.texto-animado > div span {
+    font-size: 100px;
+    line-height: 80px;
+    font-weight: 900;
+}
+
+.texto-animado .segunda-linea {
+    position: absolute;
+    color: var(--negro);
+    top: 100px;
+}
+
+.subtitulo{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--negro);
+    line-height: 30px;
+    transition: all .3s ease;
+}
+
+.logotipo:hover .subtitulo{
+    color: var(--blanco);
+}
+
+.btn-conoceme{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 5px 20px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: var(--negro);
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .3s ease;
+}
+
+.logotipo:hover .btn-conoceme{
+   background-color: var(--blanco); 
+   color: var(--negro);
+}
+
+@media(max-width: 600px) {
+    .banner{
+        background-size: cover;
+    }
+
+    .btn-conoceme{
+        font-size: 30px;
+        width: 200px;
+        padding: 10px 20px;
+    }
+}
+
+
+/*------------------------------------------*/
+/* Sección Conóceme */
+/*------------------------------------------*/
+
+.seccion-conoceme{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.seccion-conoceme .caja-imagen{
+    width: 50%;
+}
+
+.seccion-conoceme .caja-imagen img{
+    display: block;
+    max-width: 500px;
+    max-height: 500px;
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.seccion-conoceme .caja-descripcion-conoceme{
+    width: 50%;
+}
+
+.seccion-conoceme .caja-descripcion-conoceme .descripcion-conoceme{
+    padding: 5%;
+    margin: auto;
+    text-align: justify;
+    animation: fadeIn 500ms ease-in-out;
+}
+
+.seccion-conoceme .caja-descripcion-conoceme .titulo-conoceme{
+    font-size: 80px;
+    background-image: url('../img/bk-conoceme.gif');
+    background-position: center;
+    background-size: 150%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInDown 500ms ease-in-out;
+}
+
+/*------------------------------------------*/
+/*Animaciones*/
+/*------------------------------------------*/
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
